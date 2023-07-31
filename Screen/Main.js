@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import 'react-native-gesture-handler';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 
 // Screens
@@ -17,7 +19,7 @@ import { Index } from './Index';
 
 //Screen names
 const homeName = "Home";
-const catName = "Cat";
+const catName = "Cart";
 const shopName = "Shop";
 const favName = "Favorites";
 const profileName = "Profile";
@@ -38,26 +40,28 @@ function Main() {
             if (rn === indexName) {
               iconName = focused ? 'home' : 'home-outline';
             } else if (rn === catName) {
-              iconName = focused ? 'list' : 'list-outline';
+              iconName = focused ? 'format-list-bulleted-square' : 'format-list-checkbox';
             }
             else if (rn === shopName) {
-              iconName = focused ? 'card' : 'card';
+              iconName = focused ? 'store' : 'store-outline';
             } else if (rn === favName) {
               iconName = focused ? 'heart' : 'heart-outline';
             } else if (rn === profileName) {
-              iconName = focused ? 'person' : 'person-outline';
+              iconName = focused ? 'account' : 'account-outline';
             }
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <MaterialCommunityIcons name={iconName} color={color} size={size} />;
           },
         })}
         tabBarOptions={{
-          activeTintColor: 'blue',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70},
+          tabBarActiveTintColor: 'blue',
+          tabBarInactiveTintColor: 'grey',
           tabBarShowLabel: false,
-          showLabel: false,
-        }}>
+          tabBarLabelStyle: { paddingBottom: 10, fontSize: 10 },
+          tabBarStyle: [{ display: "flex"},   
+          null]
+        }
+          
+      }>
 
         <Tab.Screen name={indexName} component={Index} />
         {/* <Tab.Screen name={homeName} component={HomeScreen} /> */}

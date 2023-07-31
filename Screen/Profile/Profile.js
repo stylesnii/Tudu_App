@@ -2,7 +2,7 @@ import { StyleSheet, Text, View,ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export const Profile = () => {
   const navigation = useNavigation();
   const handleBackPress = () => {
@@ -25,7 +25,7 @@ export const Profile = () => {
           <Ionicons name="chevron-forward" marginLeft={10} size={35} color="#000" onPress={handleSignIn}/>
         </View>
         <View style={styles.select} >
-          <Ionicons name="pricetags-outline"size={35} color="#0099ff"/>
+        <MaterialCommunityIcons name="cart-check" color={'#0099ff'} size={35} />
           <Text style={styles.itemName} onPress={handleSignIn}>Orders</Text>
           <Ionicons name="chevron-forward" marginLeft={10} size={35} color="#000" onPress={handleSignIn}/>
         </View>
@@ -35,7 +35,7 @@ export const Profile = () => {
           <Ionicons name="chevron-forward" marginLeft={10} size={35} color="#000" onPress={handleSignIn}/>
         </View>
         <View style={styles.select}>
-          <Ionicons name="home"size={35} color="#0099ff"/>
+        <MaterialCommunityIcons name="store" color={'#0099ff'} size={35} />
           <Text style={styles.itemName} onPress={handleSignIn}>Sell Central</Text>
           <Ionicons name="chevron-forward" marginLeft={10} size={35} color="#000" onPress={handleSignIn}/>
         </View>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: 'row',
     marginHorizontal: 30,
-    backgroundColor: '#d0d0ff',
+    backgroundColor: '#E0E0E0',
     padding: 15,
     borderRadius: 10,
     justifyContent: 'space-between',
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   itemName: {
     fontSize: 20,
     alignSelf: 'center',
-    color: 'grey',
+    color: 'black',
   },
   signIn: {
     marginTop: 20,
